@@ -33,7 +33,7 @@ const Header = () => {
 
   return (
     <header className="fixed left-1/2 top-0 z-50 w-[93.95%] max-w-[1804px] -translate-x-1/2 bg-transparent">
-      <div className="mx-auto mt-1 flex min-h-[102px] items-center justify-between border-t border-[#00A7FF] bg-[#122434]/92 px-9 backdrop-blur-[2px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
+      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between border-t border-[#00A7FF] bg-[#122434]/92 px-9 backdrop-blur-[2px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
         <Link aria-label="Go to home page" to="/">
           <img alt="Hirex" className="h-[52px] w-auto max-[1200px]:h-10" src={logo} />
         </Link>
@@ -95,12 +95,12 @@ const Header = () => {
       </div>
 
       <div
-        className={`fixed inset-0 bg-[#030B12]/55 transition-opacity duration-300 min-[1201px]:hidden ${isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
+        className={`fixed inset-0 z-[55] bg-[#030B12]/55 transition-opacity duration-300 min-[1201px]:hidden ${isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
         onClick={closeMenu}
       />
 
       <aside
-        className={`fixed right-0 top-0 h-screen w-[min(88vw,420px)] border-l border-[#00A7FF]/35 bg-[#0B1B29]/96 px-7 pb-8 pt-28 text-white shadow-[-20px_0_50px_rgba(0,0,0,0.45)] backdrop-blur-md transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] min-[1201px]:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
+        className={`fixed right-0 top-0 z-[60] h-screen w-[min(88vw,420px)] border-l border-[#00A7FF]/35 bg-[#0B1B29]/96 px-7 pb-8 pt-28 text-white shadow-[-20px_0_50px_rgba(0,0,0,0.45)] backdrop-blur-md transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] min-[1201px]:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"}`}
         id="mobile-nav-panel"
       >
         <nav aria-label="Mobile navigation" className="mt-4">
