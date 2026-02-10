@@ -3,7 +3,7 @@ import TypographyShowcase from "../components/ui/typography.jsx";
 
 const HomePage = () => {
   return (
-    <div className="min-h-screen bg-[#f3f5f9] px-4 py-8 md:px-8 md:py-12">
+    <div className="min-h-screen bg-[#f3f5f9] px-4 pb-8 pt-32 md:px-8 md:pb-12 md:pt-36">
       <div className="mx-auto w-full max-w-6xl space-y-8">
         <header className="overflow-hidden rounded-[36px] bg-[#0f2a3d] p-6 text-white md:p-10">
           <p className="text-menu uppercase tracking-[0.2em] text-white/70">Hirex UI starter</p>
