@@ -1,5 +1,3 @@
-import arrowIcon from "../../assets/Arrow.svg";
-
 const AboutWorkflowSection = () => {
   return (
     <section className="mx-auto w-[93.95%] max-w-[1804px] rounded-[34px] bg-[#d9e1e7] px-6 py-8 text-[#111922] md:px-10 md:py-10">
@@ -31,7 +29,28 @@ const AboutWorkflowSection = () => {
             type="button"
           >
             <span>Our Story</span>
-            <img alt="" aria-hidden="true" className="h-8 w-8" src={arrowIcon} />
+            <svg
+              aria-hidden="true"
+              className="h-8 w-8"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M4 12H20"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.75"
+              />
+              <path
+                d="M14 6L20 12L14 18"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.75"
+              />
+            </svg>
           </button>
         </div>
       </div>
