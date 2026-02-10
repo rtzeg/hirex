@@ -1,3 +1,5 @@
+import WorkflowAnimation from "./workflow-animation.jsx";
+
 const AboutWorkflowSection = () => {
   return (
     <section className="mx-auto w-[93.95%] max-w-[1804px] rounded-[34px] bg-[#d9e1e7] px-6 py-8 text-[#111922] md:px-10 md:py-10">
@@ -71,6 +73,10 @@ const AboutWorkflowSection = () => {
             outcomes.
           </p>
         </div>
+      </div>
+
+      <div className="mt-4 lg:mt-2">
+        <WorkflowAnimation />
       </div>
     </section>
   );

@@ -125,3 +125,40 @@ body {
     font-size: 28px;
   }
 }
+
+
+@keyframes workflow-vibrate {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  20% {
+    transform: translate3d(-0.5px, 0.4px, 0);
+  }
+  40% {
+    transform: translate3d(0.6px, -0.45px, 0);
+  }
+  60% {
+    transform: translate3d(-0.4px, -0.25px, 0);
+  }
+  80% {
+    transform: translate3d(0.5px, 0.35px, 0);
+  }
+}
+
+@keyframes workflow-gear-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.workflow-vibrate {
+  animation: workflow-vibrate 1.8s linear infinite;
+}
+
+.workflow-gear-spin {
+  animation: workflow-gear-spin 2.2s linear infinite;
+}
