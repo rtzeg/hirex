@@ -2,6 +2,7 @@ import Button from "../components/ui/button.jsx";
 import TypographyShowcase from "../components/ui/typography.jsx";
 import Faq from "../components/layout/faq.jsx";
 import ClientSuccessSlider from "../components/layout/client-success-slider.jsx";
+import AboutWorkflowSection from "../components/layout/about-workflow-section.jsx";
 
 const HomePage = () => {
   return (
@@ -55,6 +56,8 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
+        <AboutWorkflowSection />
 
         <ClientSuccessSlider />
 
