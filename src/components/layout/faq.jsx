@@ -4,27 +4,31 @@ const faqItems = [
   {
     question: "Can I rely on outsourced professionals?",
     answer:
-      "Yes. We focus on specialists with proven project experience and transparent communication so your team can rely on stable delivery."
+      "Yes. We focus on specialists with proven project experience and transparent communication so your team can rely on stable delivery.",
+    isOpen: false
   },
   {
     question: "How do you guarantee the quality of your specialists?",
     answer:
-      "We carefully test every candidate and select only the strongest performers, then continue coaching and evaluating them to maintain high service standards."
+      "We carefully test every candidate and select only the strongest performers, then continue coaching and evaluating them to maintain high service standards.",
+    isOpen: true
   },
   {
     question: "Do I need to pay extra for taxes or other charges?",
     answer:
-      "No — everything is included in one clear payment. No extra taxes, unexpected costs, or add-ons."
+      "No — everything is included in one clear payment. No extra taxes, unexpected costs, or add-ons.",
+    isOpen: true
   },
   {
     question: "How quickly can we start working together?",
     answer:
-      "Most teams can launch in days, not months. We align requirements, shortlist candidates, and start onboarding right away."
+      "Most teams can launch in days, not months. We align requirements, shortlist candidates, and start onboarding right away.",
+    isOpen: false
   }
 ];
 
 const Faq = () => {
-  const [openItems, setOpenItems] = useState(() => new Set([1, 2]));
+  const [openItems, setOpenItems] = useState(() => new Set(faqItems.map((item, index) => (item.isOpen ? index : null)).filter((index) => index !== null)));
 
   const toggleItem = (index) => {
     setOpenItems((prev) => {
