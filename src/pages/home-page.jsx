@@ -1,10 +1,11 @@
 import Button from "../components/ui/button.jsx";
 import TypographyShowcase from "../components/ui/typography.jsx";
+import Faq from "../components/layout/faq.jsx";
 
 const HomePage = () => {
   return (
     <div className="min-h-screen bg-[#f3f5f9] px-4 pb-8 pt-32 md:px-8 md:pb-12 md:pt-36">
-      <div className="mx-auto w-full max-w-6xl space-y-8">
+      <div className="mx-auto w-full space-y-8">
         <header className="overflow-hidden rounded-[36px] bg-[#0f2a3d] p-6 text-white md:p-10">
           <p className="text-menu uppercase tracking-[0.2em] text-white/70">Hirex UI starter</p>
           <h1 className="mt-4 text-h2-5 max-w-3xl">
@@ -23,7 +24,7 @@ const HomePage = () => {
 
         <TypographyShowcase />
 
-        <section className="rounded-[32px] border border-slate-200 bg-white p-6 md:p-10">
+        <section className="mx-auto w-full max-w-6xl rounded-[32px] border border-slate-200 bg-white p-6 md:p-10">
           <div className="mb-8">
             <p className="text-menu uppercase tracking-[0.18em] text-slate-500">Buttons library</p>
             <h2 className="text-h3 mt-4 text-slate-900">Одинаковые кнопки в одном месте</h2>
@@ -53,6 +54,8 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
+        <Faq />
       </div>
     </div>
   );
