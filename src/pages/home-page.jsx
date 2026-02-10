@@ -1,6 +1,7 @@
 import Button from "../components/ui/button.jsx";
 import TypographyShowcase from "../components/ui/typography.jsx";
 import Faq from "../components/layout/faq.jsx";
+import ClientSuccessSlider from "../components/layout/client-success-slider.jsx";
 
 const HomePage = () => {
   return (
@@ -54,6 +55,8 @@ const HomePage = () => {
             </div>
           </div>
         </section>
+
+        <ClientSuccessSlider />
 
         <Faq />
       </div>
