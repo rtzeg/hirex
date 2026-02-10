@@ -67,9 +67,21 @@ const ClientSuccessSlider = () => {
 
   return (
     <section className="mx-auto w-[93.95%] max-w-[1804px] rounded-[34px] bg-[#d9e1e7] px-6 py-8 text-[#111922] md:px-10 md:py-10">
-      <div className="flex flex-wrap items-start justify-between gap-4">
+      <div className="grid gap-6 lg:grid-cols-[300px_1fr_auto] lg:items-start lg:gap-8">
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">Client Success Stories</p>
-        <div className="flex items-center gap-4">
+
+        <div className="space-y-5">
+          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[84px]/[0.92]">
+            Trusted by Industry
+            <br />
+            Leaders
+          </h2>
+          <p className="max-w-[720px] text-[30px]/[1.2] text-[#475766] md:text-[50px]/[1.12]">
+            See how Hirex transforms business operations through intelligent outsourcing and expertise.
+          </p>
+        </div>
+
+        <div className="flex items-center gap-4 lg:justify-self-end">
           <button
             aria-label="Previous slide"
             className="group inline-flex h-[68px] w-[132px] items-center justify-center rounded-[20px] border border-[#1a2630] bg-[#d9e1e7] text-[#1a2630] transition-all duration-300 hover:bg-[#111922] hover:text-white active:scale-[0.97] active:bg-[#1b2d3b] disabled:cursor-not-allowed disabled:opacity-40"
@@ -90,17 +102,6 @@ const ClientSuccessSlider = () => {
             <img alt="" aria-hidden="true" className="h-10 w-10 rotate-180" src={arrowIcon} />
           </button>
         </div>
-      </div>
-
-      <div className="mt-4 grid gap-5 lg:grid-cols-[1fr_1.15fr] lg:items-end">
-        <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[84px]/[0.92]">
-          Trusted by Industry
-          <br />
-          Leaders
-        </h2>
-        <p className="max-w-[720px] text-[30px]/[1.2] text-[#475766] md:text-[50px]/[1.12]">
-          See how Hirex transforms business operations through intelligent outsourcing and expertise.
-        </p>
       </div>
 
       <div className="mt-8 overflow-hidden">
