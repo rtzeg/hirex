@@ -1,7 +1,7 @@
 import logo from "../../assets/logo.svg";
 import businessIcon from "../../assets/busines.svg";
 import settingIcon from "../../assets/setting.svg";
-import arrowIcon from "../../assets/Arrow.svg";
+import roadAsset from "../../assets/road.svg";
 
 const WorkflowAnimation = () => {
   return (
@@ -11,9 +11,9 @@ const WorkflowAnimation = () => {
           <img alt="Your business" className="h-[96px] w-[96px] object-contain opacity-90" src={businessIcon} />
         </article>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[430px] flex-col gap-6">
+        <div className="relative z-10 mx-auto flex w-full max-w-[430px] flex-col gap-6 lg:h-[220px] lg:justify-between">
           <button
-            className="workflow-vibrate h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#6f7f8d_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
+            className="workflow-wave-button h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#6f7f8d_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
             type="button"
           >
             <span className="inline-flex items-center gap-2">
@@ -23,7 +23,7 @@ const WorkflowAnimation = () => {
           </button>
 
           <button
-            className="workflow-vibrate h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#70808e_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
+            className="workflow-wave-button h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#70808e_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
             type="button"
           >
             Impact & Results
@@ -35,17 +35,8 @@ const WorkflowAnimation = () => {
         </article>
       </div>
 
-      <div aria-hidden="true" className="pointer-events-none absolute inset-x-[13%] top-1/2 hidden h-[240px] -translate-y-1/2 lg:block">
-        <div className="absolute left-0 top-[30px] h-[92px] w-[34%] rounded-[999px] border-2 border-dashed border-[#8d9dac] border-r-0" />
-        <div className="absolute left-0 bottom-[30px] h-[92px] w-[34%] rounded-[999px] border-2 border-dashed border-[#8d9dac] border-r-0" />
-
-        <div className="absolute right-0 top-[30px] h-[92px] w-[34%] rounded-[999px] border-2 border-dashed border-[#8d9dac] border-l-0" />
-        <div className="absolute right-0 bottom-[30px] h-[92px] w-[34%] rounded-[999px] border-2 border-dashed border-[#8d9dac] border-l-0" />
-
-        <img alt="" className="absolute left-[30.5%] top-[46px] h-8 w-8 rotate-180 opacity-90" src={arrowIcon} />
-        <img alt="" className="absolute left-[30.5%] bottom-[46px] h-8 w-8 rotate-180 opacity-90" src={arrowIcon} />
-        <img alt="" className="absolute right-[30.5%] top-[46px] h-8 w-8 opacity-90" src={arrowIcon} />
-        <img alt="" className="absolute right-[30.5%] bottom-[46px] h-8 w-8 opacity-90" src={arrowIcon} />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-x-[8%] top-1/2 hidden -translate-y-1/2 lg:block">
+        <img alt="" className="h-[220px] w-full opacity-90" src={roadAsset} />
       </div>
     </div>
   );

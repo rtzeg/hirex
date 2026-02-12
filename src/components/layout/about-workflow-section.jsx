@@ -75,7 +75,7 @@ const AboutWorkflowSection = () => {
         </div>
       </div>
 
-      <div className="mt-4 lg:mt-2">
+      <div className="mt-10 lg:mt-8">
         <WorkflowAnimation />
       </div>
     </section>

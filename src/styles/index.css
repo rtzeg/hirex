@@ -162,3 +162,40 @@ body {
 .workflow-gear-spin {
   animation: workflow-gear-spin 2.2s linear infinite;
 }
+
+
+@keyframes workflow-wave {
+  0% {
+    opacity: 0.75;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.085);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+}
+
+.workflow-wave-button {
+  position: relative;
+  isolation: isolate;
+}
+
+.workflow-wave-button::before,
+.workflow-wave-button::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 1px solid rgba(139, 156, 172, 0.7);
+  pointer-events: none;
+  z-index: -1;
+  animation: workflow-wave 2.8s ease-out infinite;
+}
+
+.workflow-wave-button::after {
+  animation-delay: 1.4s;
+}
