@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "Vela Sans";
   src: url("../assets/fonts/VelaSans-Light.ttf") format("truetype");
@@ -385,3 +386,52 @@ body {
   animation-delay: 0.72s;
 }
 
+/* Плавность и меньше дерганий */
+.cube-float-left,
+.cube-float-right {
+  will-change: transform;
+  transform-origin: center;
+  filter: drop-shadow(0 22px 40px rgba(0, 0, 0, 0.35));
+}
+
+/* Левый куб: чуть медленнее и "вверх-вниз + легкий поворот" */
+.cube-float-left {
+  animation: cubeFloatLeft 6.5s ease-in-out infinite;
+}
+
+/* Правый куб: другая фаза, чтобы не синхронно (иначе кринж) */
+.cube-float-right {
+  animation: cubeFloatRight 7.2s ease-in-out infinite;
+}
+
+@keyframes cubeFloatLeft {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-3deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) rotate(3deg) scale(1.01);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-3deg) scale(1);
+  }
+}
+
+@keyframes cubeFloatRight {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(3deg) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -22px, 0) rotate(-2deg) scale(1.015);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(3deg) scale(1);
+  }
+}
+
+/* Уважение к настройкам пользователя */
+@media (prefers-reduced-motion: reduce) {
+  .cube-float-left,
+  .cube-float-right {
+    animation: none !important;
+  }
+}

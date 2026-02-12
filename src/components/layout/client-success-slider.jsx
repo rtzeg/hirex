@@ -89,7 +89,7 @@ const ClientSuccessSlider = () => {
             onClick={goPrev}
             type="button"
           >
-            <img alt="" aria-hidden="true" className="h-10 w-10" src={arrowIcon} />
+            <img alt="" aria-hidden="true" className="h-10 w-10 rotate-180" src={arrowIcon} />
           </button>
 
           <button
@@ -99,7 +99,7 @@ const ClientSuccessSlider = () => {
             onClick={goNext}
             type="button"
           >
-            <img alt="" aria-hidden="true" className="h-10 w-10 rotate-180" src={arrowIcon} />
+            <img alt="" aria-hidden="true" className="h-10 w-10" src={arrowIcon} />
           </button>
         </div>
       </div>
