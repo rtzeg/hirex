@@ -1,0 +1,16 @@
+<svg width="1060" height="272" viewBox="0 0 1060 272" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M12 72H168C223 72 246 36 275 22C295 12 323 12 360 12H700C737 12 765 12 785 22C814 36 837 72 892 72H1048" stroke="#8D9DAC" stroke-width="2.2" stroke-dasharray="12 10" stroke-linecap="round"/>
+  <path d="M12 200H168C223 200 246 236 275 250C295 260 323 260 360 260H700C737 260 765 260 785 250C814 236 837 200 892 200H1048" stroke="#8D9DAC" stroke-width="2.2" stroke-dasharray="12 10" stroke-linecap="round"/>
+
+  <path d="M12 72H168C223 72 246 36 275 22C295 12 323 12 360 12H700C737 12 765 12 785 22C814 36 837 72 892 72H1048" stroke="#D8E4EE" stroke-width="2.8" stroke-dasharray="12 10" stroke-linecap="round" opacity="0.95">
+    <animate attributeName="stroke-dashoffset" from="0" to="-74" dur="2.3s" repeatCount="indefinite"/>
+  </path>
+  <path d="M12 200H168C223 200 246 236 275 250C295 260 323 260 360 260H700C737 260 765 260 785 250C814 236 837 200 892 200H1048" stroke="#D8E4EE" stroke-width="2.8" stroke-dasharray="12 10" stroke-linecap="round" opacity="0.95">
+    <animate attributeName="stroke-dashoffset" from="-37" to="-111" dur="2.3s" repeatCount="indefinite"/>
+  </path>
+
+  <path d="M338 58L352 72L338 86" stroke="#8D9DAC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M338 186L352 200L338 214" stroke="#8D9DAC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M722 58L708 72L722 86" stroke="#8D9DAC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M722 186L708 200L722 214" stroke="#8D9DAC" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
