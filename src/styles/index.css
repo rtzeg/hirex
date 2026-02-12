@@ -166,36 +166,40 @@ body {
 
 @keyframes workflow-wave {
   0% {
-    opacity: 0.75;
+    opacity: 0.85;
     transform: scale(1);
   }
-  70% {
+  75% {
     opacity: 0;
-    transform: scale(1.085);
+    transform: scale(1.14);
   }
   100% {
     opacity: 0;
-    transform: scale(1.1);
+    transform: scale(1.18);
   }
 }
 
 .workflow-wave-button {
   position: relative;
   isolation: isolate;
+  overflow: visible;
 }
 
-.workflow-wave-button::before,
-.workflow-wave-button::after {
-  content: "";
+.workflow-wave-ring {
   position: absolute;
   inset: -6px;
   border-radius: inherit;
-  border: 1px solid rgba(139, 156, 172, 0.7);
+  border: 1px solid rgba(139, 156, 172, 0.78);
   pointer-events: none;
   z-index: -1;
-  animation: workflow-wave 2.8s ease-out infinite;
+  animation: workflow-wave 1.1s linear infinite;
 }
 
-.workflow-wave-button::after {
-  animation-delay: 1.4s;
+.workflow-wave-ring-delay-1 {
+  animation-delay: 0.36s;
 }
+
+.workflow-wave-ring-delay-2 {
+  animation-delay: 0.72s;
+}
+

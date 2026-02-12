@@ -16,7 +16,10 @@ const WorkflowAnimation = () => {
             className="workflow-wave-button h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#6f7f8d_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
             type="button"
           >
-            <span className="inline-flex items-center gap-2">
+            <span aria-hidden="true" className="workflow-wave-ring" />
+            <span aria-hidden="true" className="workflow-wave-ring workflow-wave-ring-delay-1" />
+            <span aria-hidden="true" className="workflow-wave-ring workflow-wave-ring-delay-2" />
+            <span className="relative z-10 inline-flex items-center gap-2">
               <img alt="" aria-hidden="true" className="workflow-gear-spin h-6 w-6" src={settingIcon} />
               Work Process
             </span>
@@ -26,7 +29,10 @@ const WorkflowAnimation = () => {
             className="workflow-wave-button h-[74px] w-full rounded-[20px] border border-[#9eaab5] bg-[linear-gradient(145deg,#70808e_0%,#4d5d6b_48%,#384754_100%)] px-6 text-[24px] font-medium text-white shadow-[0_0_0_4px_rgba(217,225,231,0.8),0_0_0_8px_rgba(157,169,179,0.45)]"
             type="button"
           >
-            Impact & Results
+            <span aria-hidden="true" className="workflow-wave-ring" />
+            <span aria-hidden="true" className="workflow-wave-ring workflow-wave-ring-delay-1" />
+            <span aria-hidden="true" className="workflow-wave-ring workflow-wave-ring-delay-2" />
+            <span className="relative z-10">Impact & Results</span>
           </button>
         </div>
 
