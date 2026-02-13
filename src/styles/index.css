@@ -435,3 +435,44 @@ body {
     animation: none !important;
   }
 }
+@keyframes main-shell-float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(3);
+  }
+  50% {
+    transform: translate3d(0, -14px, 0) rotate(3deg) scale(3);
+  }
+}
+
+@keyframes main-shell-float-medium {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes main-shell-float-fast {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(3);
+  }
+  50% {
+    transform: translate3d(0, -16px, 0) rotate(-4deg) scale(3);
+  }
+}
+
+.main-shell-float-slow {
+  animation: main-shell-float-slow 5s ease-in-out infinite;
+}
+
+.main-shell-float-medium {
+  animation: main-shell-float-medium 4.1s ease-in-out infinite;
+}
+
+.main-shell-float-fast {
+  animation: main-shell-float-fast 3.4s ease-in-out infinite;
+}
