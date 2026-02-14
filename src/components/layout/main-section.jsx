@@ -4,6 +4,8 @@ import unionBg from "../../assets/Union.png";
 import cubeLeft from "../../assets/01.png";
 import cubeRight from "../../assets/02.png";
 
+import "./main-section.css"
+
 const isVideoFile = (url) => /\.(mp4|webm|ogg)(\?.*)?$/i.test(url);
 
 const MainSection = ({
@@ -99,29 +101,6 @@ const MainSection = ({
                     <div className="pointer-events-none absolute inset-x-0 bottom-[-310px] md:bottom-[-500px] z-20">
                         <div className="pointer-events-auto mx-auto w-[40%] max-w-[1133px] md:w-[70%]">
                             <div className="relative rounded-[28px]">
-                                {/* Подложка-рамка, выпирает на 13px и СЛИВАЕТСЯ по цвету (Union + lines) */}
-                                <div
-                                    aria-hidden="true"
-                                    className="absolute rounded-[41px]"
-                                    style={{
-                                        inset: "-13px",
-                                        backgroundImage: `url(${unionBg})`,
-                                        backgroundRepeat: "no-repeat",
-                                        backgroundPosition: "center",
-                                        backgroundSize: "cover"
-                                    }}
-                                />
-                                <div
-                                    aria-hidden="true"
-                                    className="absolute rounded-[41px] opacity-[0.14]"
-                                    style={{
-                                        inset: "-13px",
-                                        backgroundImage: `url(${lines})`,
-                                        backgroundRepeat: "repeat",
-                                        backgroundSize: "auto"
-                                    }}
-                                />
-
                                 {/* Само видео */}
                                 <div className="relative overflow-hidden rounded-[28px] bg-black border-2 border-[#16232B] shadow-[0_22px_70px_rgba(0,0,0,0.45)]">
                                     <div className="aspect-video w-full">
@@ -144,7 +123,13 @@ const MainSection = ({
                 </div>
 
                 {/* Серое поле снизу (увеличил, чтобы места хватало) */}
-                <div className="h-[520px] md:h-[760px]" />
+                <div className="h-[520px] md:h-[550px]" >
+                    <div className="h-main">
+                        <div className="h-left"></div>
+                        <div className="h-right"></div>
+                        <div className="h-down"></div>
+                    </div>
+                </div>
             </div>
         </section>
     );
