@@ -1,31 +1,150 @@
-.h-main {
+/* Главная магия: синхроним видео и низ карточки через переменные */
+.main-section {
+  /* Радиус оставляем как у тебя */
+  --ms-radius: 28px;
+
+  /* Ширина видео (адаптивно) */
+  --ms-video-w: min(1133px, 70vw);
+
+  /* Высота видео по 16:9 (да, это работает) */
+  --ms-video-h: calc(var(--ms-video-w) * 9 / 16);
+
+  /* Сколько видео "выпирает" вниз из синего блока (overhang) */
+  --ms-overhang: 310px;
+
+  /* Сколько видео "заходит" внутрь синего блока */
+  --ms-inset: calc(var(--ms-video-h) - var(--ms-overhang));
+
+  /* Отступ между кнопками и верхом видео */
+  --ms-gap: 72px;
+
+  /* Нижний padding контента = чтобы видео не налезало и было ровно */
+  --ms-content-pb: calc(var(--ms-inset) + var(--ms-gap));
+
+  /* Сколько места снизу зарезервировать под вылезшее видео */
+  --ms-after-space: calc(var(--ms-overhang) + 220px);
+}
+
+/* <=1600px: аккуратно сжимаем */
+@media (max-width: 1600px) {
+  .main-section {
+    --ms-video-w: min(1050px, 74vw);
+    --ms-overhang: 280px;
+    --ms-gap: 64px;
+    --ms-after-space: calc(var(--ms-overhang) + 200px);
+  }
+}
+
+/* <=1200px */
+@media (max-width: 1200px) {
+  .main-section {
+    --ms-video-w: min(920px, 86vw);
+    --ms-overhang: 220px;
+    --ms-gap: 56px;
+    --ms-after-space: calc(var(--ms-overhang) + 180px);
+  }
+}
+
+/* <=768px */
+@media (max-width: 768px) {
+  .main-section {
+    --ms-video-w: min(760px, 92vw);
+    --ms-overhang: 180px;
+    --ms-gap: 46px;
+    --ms-after-space: calc(var(--ms-overhang) + 150px);
+  }
+
+  /* Второй блок (h-main) прячем, чтобы не было огромных пустот */
+  .main-section__afterSpace .h-main {
+    display: none;
+  }
+}
+
+/* <=420px (самый больной кейс) */
+@media (max-width: 420px) {
+  .main-section {
+    --ms-video-w: min(560px, 94vw);
+    --ms-overhang: 140px;
+    --ms-gap: 40px;
+    --ms-after-space: calc(var(--ms-overhang) + 120px);
+  }
+}
+
+/* WRAP */
+.main-section__wrap {
   position: relative;
-  width: 100%;
-  height: 100%;
 }
 
-/* :root {
-  --bg-color: #2c4a63;
-  --radius: 20px;      
-} */
-
-.h-left {
-  width: 1200px;
-  height: 530px;
-  background: #416880;
-  margin: auto;
-  border-radius: 0 0 50px 50px;
-}
-
-/* .h-right {
+/* BG слой: расширяем вниз на overhang, чтобы НЕ было шва при наложении видео */
+.main-section__bg {
   position: absolute;
-  background: rebeccapurple;
-  width: 150px;
-  height: 400px;
-  border-radius: 40px 0 0 0;
+  top: 0;
+  left: 0;
   right: 0;
+
+  /* ВАЖНО: фон продлеваем вниз */
+  bottom: calc(-1 * var(--ms-overhang));
+
+  border-radius: var(--ms-radius);
+  overflow: hidden;
+  z-index: 0;
 }
 
-.h-down {
+.main-section__bg-union,
+.main-section__bg-lines,
+.main-section__bg-vignette {
   position: absolute;
-} */
+  inset: 0;
+}
+
+.main-section__bg-lines { opacity: 0.16; }
+
+/* Card поверх bg */
+.main-section__card {
+  position: relative;
+  z-index: 5;
+  background: transparent;
+}
+
+/* Контенту даем низ, который считается от размеров видео */
+.main-section__content {
+  padding-bottom: var(--ms-content-pb);
+}
+
+/* Видео: всегда по центру, всегда “выпирает” на overhang */
+.main-section__video {
+  bottom: calc(-1 * var(--ms-overhang));
+}
+
+.main-section__video-inner {
+  width: var(--ms-video-w);
+  max-width: 1133px;
+}
+
+/* Низ страницы: место под видео (без лишней пустоты) */
+.main-section__afterSpace {
+  height: var(--ms-after-space);
+}
+
+/* Анимация кубиков: “парят” */
+@keyframes cubeFloatA {
+  0%   { transform: translate3d(0, 0, 0) rotate(-2deg); }
+  50%  { transform: translate3d(0, -18px, 0) rotate(2deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(-2deg); }
+}
+
+@keyframes cubeFloatB {
+  0%   { transform: translate3d(0, 0, 0) rotate(2deg); }
+  50%  { transform: translate3d(0, -22px, 0) rotate(-2deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(2deg); }
+}
+
+.cube-float-left {
+  animation: cubeFloatA 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.cube-float-right {
+  animation: cubeFloatB 7.2s ease-in-out infinite;
+  will-change: transform;
+}
