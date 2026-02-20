@@ -2,7 +2,7 @@ import WorkflowAnimation from "./workflow-animation.jsx";
 
 const AboutWorkflowSection = () => {
   return (
-    <section className="mx-auto w-[93.95%] max-w-[1804px] rounded-[34px] bg-[#d9e1e7] px-6 py-8 text-[#111922] md:px-10 md:py-10">
+    <section className="mx-auto w-[93.95%] max-w-[1920px] rounded-[34px] bg-[#e5e7eb]">
       <div className="grid gap-8 lg:grid-cols-[300px_1fr]">
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">About Us</p>
 

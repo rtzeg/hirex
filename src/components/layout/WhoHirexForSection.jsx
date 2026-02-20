@@ -50,7 +50,7 @@ const cards = [
 
 const WhoHirexFor = () => {
   return (
-    <section className="relative mx-auto w-[100%] max-w-[1920px] px-6 pb-24">
+    <section className="relative mx-auto w-[100%] max-w-[1920px]">
       <div className="relative overflow-hidden rounded-[28px] shadow-[0_25px_120px_rgba(0,0,0,0.55)]">
         {/* BASE GRADIENT (без Union.png) */}
         <div

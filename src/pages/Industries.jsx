@@ -48,7 +48,7 @@ const Industries = () => {
     <main className="bg-[#EAF0F2] text-[#2B2F33]">
       {/* header fixed -> отступ сверху */}
       <WhoHirexForSection />
-      <section className="mx-auto w-[100%] max-w-[1920px] px-6 pt-[140px] max-[1200px]:pt-[120px]">
+      <section className="mx-auto w-[100%] max-w-[1920px] pt-[140px] max-[1200px]:pt-[120px]">
         <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-16 max-[1200px]:grid-cols-1 max-[1200px]:gap-10">
           {/* LEFT */}
           <div className="min-w-0">

@@ -7,7 +7,7 @@ const navItems = [
   { label: "Industries", to: "/industries", hasChevron: true },
   { label: "Service", to: "/" },
   { label: "Solutions", to: "/" },
-  { label: "About Us", to: "/" }
+  { label: "About Us", to: "/about" }
 ];
 
 const Header = () => {
@@ -33,8 +33,8 @@ const Header = () => {
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
-    <header className="fixed left-1/2 top-0 z-50 w-[100%] max-w-[1920px] -translate-x-1/2 bg-transparent">
-      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between border border-white/10 bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
+    <header className="w-[100%] max-w-[1920px] bg-transparent">
+      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between   bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
         <Link aria-label="Go to home page" to="/" onClick={closeMenu}>
           <img alt="Hirex" className="h-[52px] w-auto max-[1200px]:h-10" src={logo} />
         </Link>
