@@ -71,12 +71,12 @@ const ClientSuccessSlider = () => {
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">Client Success Stories</p>
 
         <div className="space-y-5">
-          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[84px]/[0.92]">
+          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[72px]/[0.92]">
             Trusted by Industry
             <br />
             Leaders
           </h2>
-          <p className="max-w-[720px] text-[30px]/[1.2] text-[#475766] md:text-[50px]/[1.12]">
+          <p className="max-w-[720px] text-[30px]/[1.2] text-[#475766] md:text-[24px]/[1.12]">
             See how Hirex transforms business operations through intelligent outsourcing and expertise.
           </p>
         </div>
@@ -115,11 +115,11 @@ const ClientSuccessSlider = () => {
               key={slide.text}
               style={{ width: `calc((100% - ${(slidesPerView - 1) * 20}px) / ${slidesPerView})` }}
             >
-              <p className="text-[24px]/[1.32] text-[#3e4d5a] md:text-[42px]/[1.23]">{slide.text}</p>
+              <p className="text-[24px]/[1.32] text-[#3e4d5a] md:text-[24px]/[1.23]">{slide.text}</p>
 
               <div className="mt-auto flex items-center gap-4 pt-6">
                 <img alt={slide.highlightedText} className="h-14 w-14 rounded-[10px] object-cover md:h-16 md:w-16" src={slide.image} />
-                <p className="max-w-[380px] text-[30px]/[1.1] font-semibold text-[#1c242c] md:text-[42px]/[1.08]">
+                <p className="max-w-[380px] text-[18px]/[1.1] font-bold text-[#1c242c] md:text-[18px]/[1.08]">
                   {slide.highlightedText}
                 </p>
               </div>

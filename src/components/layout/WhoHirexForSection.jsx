@@ -4,7 +4,7 @@ import lines from "../../assets/lines.png";
 
 // Иконки можешь заменить на свои.
 // Я оставил твои 01..05.png, чтобы ничего лишнего не придумывать.
-import icon1 from "../../assets/01.png";
+import icon1 from "../../assets/01.svg";
 import icon2 from "../../assets/02.png";
 import icon3 from "../../assets/03.png";
 import icon4 from "../../assets/04.png";
@@ -85,15 +85,15 @@ const WhoHirexFor = () => {
 
         {/* CONTENT */}
         <div className="relative px-6 pb-10 pt-20 text-white max-[1200px]:pt-16">
-          <p className="text-center text-[18px]/[1.2] text-white/55 max-[1200px]:text-[16px]">
+          <p className="text-center text-[28px]/[1.2] text-white/55 max-[1200px]:text-[16px]">
             Who Hirex Is For?
           </p>
 
-          <h2 className="mx-auto mt-5 max-w-[980px] text-center text-[64px]/[1.02] font-semibold tracking-[-0.03em] max-[1600px]:text-[56px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
+          <h2 className="mx-auto mt-5 max-w-[980px] text-center text-[72px]/[1.02] font-semibold tracking-[-0.03em] max-[1600px]:text-[56px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
             Flexible Support <br /> Built to Your Model
           </h2>
 
-          <p className="mx-auto mt-6 max-w-[760px] text-center text-[18px]/[1.6] text-white/70 max-[1200px]:text-[16px]">
+          <p className="mx-auto mt-6 max-w-[760px] text-center text-[24px]/[1.6] text-white/70 max-[1200px]:text-[16px]">
             Hirex is designed for companies across various industries that need a reliable,
             ready-to-work team for customer support, call centers, and operational efficiency.
           </p>
@@ -132,7 +132,7 @@ const WhoHirexFor = () => {
                     />
                   </div>
 
-                  <h3 className="text-[34px]/[1.06] font-semibold tracking-[-0.02em] text-white/92 max-[1200px]:text-[30px]">
+                  <h3 className=" text-[32px]/[1.06] font-semibold tracking-[-0.02em] text-white/92 max-[1200px]:text-[30px]">
                     {c.title}
                   </h3>
 

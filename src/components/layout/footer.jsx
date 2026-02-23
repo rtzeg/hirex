@@ -31,8 +31,8 @@ const Footer = () => {
             </div>
 
             <div className="space-y-2 text-[70px]/[1.05] font-semibold max-[1604px]:text-[52px]/[1.06] max-lg:text-[42px]/[1.08] max-md:text-[34px]/[1.1]">
-              <a className="block transition-opacity hover:opacity-80" href="tel:+11233211122">
-                +1 (123) 321-11-22
+              <a className="block transition-opacity hover:opacity-80" href="tel:+13152752275">
+                +1 315-275-2275
               </a>
               <a className="block transition-opacity hover:opacity-80" href="mailto:info@hirx.ai">
                 info@hirx.ai
@@ -41,7 +41,7 @@ const Footer = () => {
 
             <div>
               <h3 className="text-[52px] font-semibold text-white max-[1604px]:text-[42px] max-lg:text-[36px] max-md:text-[30px]">Navigation</h3>
-              <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-[40px]/[1.15] font-normal max-[1604px]:text-[32px]/[1.2] max-lg:text-[28px]/[1.2] max-md:grid-cols-1 max-md:text-[24px]/[1.2]">
+              <div className="mt-4 grid grid-cols-2 gap-x-8 gap-y-2 text-[22px]/[1.15] font-normal max-[1604px]:text-[32px]/[1.2] max-lg:text-[28px]/[1.2] max-md:grid-cols-1 max-md:text-[24px]/[1.2]">
                 {navigation.map((col) => (
                   <div className="space-y-2" key={col[0]}>
                     {col.map((item) => (
@@ -55,7 +55,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="relative z-10 mt-10 flex flex-wrap items-center justify-between gap-5 text-[38px] text-white/95 max-[1604px]:mt-8 max-[1604px]:text-[28px] max-lg:text-[24px] max-md:text-[20px]">
+          <div className="relative z-10 mt-10 flex flex-wrap items-center justify-between gap-5 text-[22px] text-white/95 max-[1604px]:mt-8 max-[1604px]:text-[28px] max-lg:text-[24px] max-md:text-[20px]">
             <p>© Hirex 2026</p>
             <div className="flex flex-wrap items-center justify-center gap-7 max-[1604px]:gap-5 max-md:gap-4">
               {socialLinks.map((social) => (

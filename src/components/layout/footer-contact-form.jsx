@@ -7,7 +7,7 @@ const FooterContactForm = () => {
             Ready to Hire Excellence?
           </h2>
           <p className="max-w-[480px] text-body-2 text-[#33556d] max-[1604px]:text-[26px]/[1.12] max-md:text-[22px]/[1.2]">
-            Our specialist will review your request and contact to you shortly.
+            Our specialist will review your request and contact to shortly.
           </p>
         </div>
 

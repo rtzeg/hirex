@@ -7,20 +7,20 @@ const AboutWorkflowSection = () => {
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">About Us</p>
 
         <div>
-          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[84px]/[0.92]">Our Mission</h2>
+          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[72px]/[0.92]">Our Mission</h2>
 
-          <p className="mt-4 max-w-[1150px] text-[34px]/[1.2] text-[#475766] md:text-[50px]/[1.12]">
+          <p className="mt-4 max-w-[1150px] text-[24px]/[1.2] text-[#475766] md:text-[24px]/[1.12]">
             Our mission is to help businesses scale by supplying trained remote staff who can start
             delivering from day one. From chats and calls to finance and CRM work, we take care of
             the daily tasks that keep companies running.
           </p>
 
           <div className="mt-7 grid gap-6 md:grid-cols-2">
-            <p className="max-w-[520px] text-[27px]/[1.25] text-[#566675] md:text-[39px]/[1.24]">
+            <p className="max-w-[520px] text-[18px]/[1.25] text-[#566675] md:text-[18px]/[1.24]">
               We don’t just send you candidates — we provide pre-trained specialists who already
               know how to perform.
             </p>
-            <p className="max-w-[520px] text-[27px]/[1.25] text-[#566675] md:text-[39px]/[1.24]">
+            <p className="max-w-[520px] text-[20px]/[1.25] text-[#566675] md:text-[20px]/[1.24]">
               You get a reliable team that steps in fast, saves you time, and helps your business
               run better every day.
             </p>
@@ -57,17 +57,17 @@ const AboutWorkflowSection = () => {
         </div>
       </div>
 
-      <div className="mt-14 grid gap-8 lg:grid-cols-[300px_1fr]">
+      <div id="service" className="mt-14 grid gap-8 lg:grid-cols-[300px_1fr]">
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">Workflow Process</p>
 
         <div>
-          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[84px]/[0.92]">
+          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[72px]/[0.92]">
             Revolutionizing Your
             <br />
             Business Workflow
           </h2>
 
-          <p className="mt-4 max-w-[1150px] text-[34px]/[1.2] text-[#475766] md:text-[50px]/[1.12]">
+          <p className="mt-4 max-w-[1150px] text-[24px]/[1.2] text-[#475766] md:text-[24px]/[1.12]">
             At Hirex, we transform your operational processes by seamlessly integrating our expert
             outsourcing services, resulting in greater efficiency, lower costs, and superior
             outcomes.

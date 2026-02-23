@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 
 const navItems = [
-  { label: "How it works", to: "/" },
+  // ЯКОРЯ (главная страница)
+  { label: "How it works", anchor: "how-it-works" },
+  { label: "Service", anchor: "service" },
+  { label: "Solutions", anchor: "solutions" },
+
+  // РОУТЫ (другие страницы)
   { label: "Industries", to: "/industries", hasChevron: true },
-  { label: "Service", to: "/" },
-  { label: "Solutions", to: "/" },
-  { label: "About Us", to: "/about" }
+  { label: "About Us", to: "/about" },
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.body.style.overflow = isMenuOpen ? "hidden" : "";
-
     return () => {
       document.body.style.overflow = "";
     };
@@ -32,9 +36,38 @@ const Header = () => {
 
   const closeMenu = () => setIsMenuOpen(false);
 
+  const scrollToAnchor = (id) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  // если мы перешли на /#hash — докрутим после рендера
+  useEffect(() => {
+    if (location.pathname !== "/") return;
+    if (!location.hash) return;
+
+    const id = location.hash.replace("#", "");
+    const t = setTimeout(() => scrollToAnchor(id), 50);
+    return () => clearTimeout(t);
+  }, [location.pathname, location.hash]);
+
+  const handleAnchorClick = (anchorId) => {
+    closeMenu();
+
+    if (location.pathname === "/") {
+      // уже на главной
+      requestAnimationFrame(() => scrollToAnchor(anchorId));
+      return;
+    }
+
+    // на другой странице -> идём на главную с хэшем
+    navigate(`/#${anchorId}`);
+  };
+
   return (
     <header className="w-[100%] max-w-[1920px] bg-transparent">
-      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between   bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
+      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
         <Link aria-label="Go to home page" to="/" onClick={closeMenu}>
           <img alt="Hirex" className="h-[52px] w-auto max-[1200px]:h-10" src={logo} />
         </Link>
@@ -43,37 +76,48 @@ const Header = () => {
           <ul className="flex items-center gap-12 text-menu text-white">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
-                  to={item.to}
-                >
-                  <span>{item.label}</span>
+                {item.anchor ? (
+                  <button
+                    type="button"
+                    onClick={() => handleAnchorClick(item.anchor)}
+                    className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                ) : (
+                  <Link
+                    className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+                    to={item.to}
+                    onClick={closeMenu}
+                  >
+                    <span>{item.label}</span>
 
-                  {item.hasChevron ? (
-                    <svg
-                      aria-hidden="true"
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.75"
-                      />
-                    </svg>
-                  ) : null}
-                </Link>
+                    {item.hasChevron ? (
+                      <svg
+                        aria-hidden="true"
+                        className="h-4 w-4"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15L17 10"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.75"
+                        />
+                      </svg>
+                    ) : null}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
         </nav>
 
         <button
-          className="rounded-[16px] bg-[#D9DEE1] px-10 py-3 text-[37px]/[1] font-normal text-[#202326] transition-colors duration-300 hover:bg-white max-[1200px]:hidden"
+          className="rounded-[16px] bg-[#D9DEE1] px-10 py-3 text-[20px]/[1] font-normal text-[#202326] transition-colors duration-300 hover:bg-white max-[1200px]:hidden"
           type="button"
         >
           Book a demo
@@ -122,38 +166,48 @@ const Header = () => {
           <ul className="space-y-2">
             {navItems.map((item) => (
               <li key={item.label}>
-                <Link
-                  className="inline-flex w-full items-center justify-between rounded-xl px-4 py-3 text-[22px]/[1.2] transition-colors duration-300 hover:bg-white/10"
-                  onClick={closeMenu}
-                  to={item.to}
-                >
-                  <span>{item.label}</span>
+                {item.anchor ? (
+                  <button
+                    type="button"
+                    onClick={() => handleAnchorClick(item.anchor)}
+                    className="inline-flex w-full items-center justify-between rounded-xl px-4 py-3 text-[22px]/[1.2] transition-colors duration-300 hover:bg-white/10"
+                  >
+                    <span>{item.label}</span>
+                  </button>
+                ) : (
+                  <Link
+                    className="inline-flex w-full items-center justify-between rounded-xl px-4 py-3 text-[22px]/[1.2] transition-colors duration-300 hover:bg-white/10"
+                    onClick={closeMenu}
+                    to={item.to}
+                  >
+                    <span>{item.label}</span>
 
-                  {item.hasChevron ? (
-                    <svg
-                      aria-hidden="true"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M7 10L12 15L17 10"
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="1.75"
-                      />
-                    </svg>
-                  ) : null}
-                </Link>
+                    {item.hasChevron ? (
+                      <svg
+                        aria-hidden="true"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M7 10L12 15L17 10"
+                          stroke="currentColor"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="1.75"
+                        />
+                      </svg>
+                    ) : null}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
         </nav>
 
         <button
-          className="mt-8 w-full rounded-[16px] bg-[#D9DEE1] px-8 py-4 text-[28px]/[1.05] font-normal text-[#202326] transition-colors duration-300 hover:bg-white"
+          className="mt-8 w-full rounded-[16px] bg-[#D9DEE1] px-8 py-4 text-[20px]/[1.05] font-normal text-[#202326] transition-colors duration-300 hover:bg-white"
           type="button"
         >
           Book a demo

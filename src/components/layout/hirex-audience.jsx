@@ -88,7 +88,7 @@ const HirexAudienceGrid = () => {
   const nextSlide = () => setSlideIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
 
   return (
-    <section className="relative z-10 mt-14 overflow-hidden rounded-[32px] bg-[#16232B] px-4 pb-8 pt-12 text-white md:mt-16 md:px-8 md:pb-12 md:pt-16">
+    <section id="solutions" className="relative z-10 mt-14 overflow-hidden rounded-[32px] bg-[#16232B] px-4 pb-8 pt-12 text-white md:mt-16 md:px-8 md:pb-12 md:pt-16">
       <img
         alt=""
         aria-hidden="true"
@@ -142,13 +142,13 @@ const HirexAudienceGrid = () => {
         })}
       </div>
 
-      <div className="relative z-10 mt-14 md:mt-16">
+      <div id="how-it-works" className="relative z-10 mt-14 md:mt-16">
         <div className="mb-8 flex flex-col gap-6 md:mb-10 md:flex-row md:items-start md:justify-between">
           <p className="text-[22px] text-white/65 md:pt-3">How it Works</p>
 
           <div className="md:mr-auto md:ml-16">
-            <h4 className="text-[58px] font-semibold leading-[0.95] md:text-[72px]">Hire Wisely</h4>
-            <p className="mt-3 max-w-[720px] text-[20px] leading-[1.25] text-[#A8B8C6] md:text-[46px]">
+            <h4 className="text-[58px] font-semibold leading-[0.95] md:text-[58px]">Hire Wisely</h4>
+            <p className="mt-3 max-w-[720px] text-[20px] leading-[1.25] text-[#A8B8C6] md:text-[24px]">
               We carefully select our hires to ensure that you can accelerate your growth and
               achieve your goals more effectively.
             </p>
