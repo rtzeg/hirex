@@ -8,8 +8,7 @@ import mapImg from "../assets/map.png"; // <-- если у тебя maps.png, п
 /* -------------------- DATA -------------------- */
 
 const defaultLeaders = [
-  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark" },
-  { name: "Niko Wilson", role: "COO & Co-Founder", badge: "light" },
+  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark" }, 
   { name: "Kobe G", role: "VP of Development", badge: "dark" },
 ];
 
@@ -368,7 +367,7 @@ const AboutUs = () => {
     <main className="text-white">
       {/* HERO */}
       <section className="bg-transparent">
-        <div className="mx-auto w-[100%] max-w-[1920px] max-[1200px]:pt-[120px]">
+        <div className="mx-auto w-[100%] max-w-[1920px]">
           <div className="relative h-[536px] overflow-hidden rounded-[28px] shadow-[0_25px_120px_rgba(0,0,0,0.55)]">
             <div
               aria-hidden="true"

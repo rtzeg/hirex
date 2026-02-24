@@ -61,7 +61,7 @@ const AboutWorkflowSection = () => {
         <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">Workflow Process</p>
 
         <div>
-          <h2 className="text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[72px]/[0.92]">
+          <h2 className="font-semibold tracking-[-0.03em] text-[34px]/[1.02] sm:text-[44px]/[1.02] md:text-[64px]/[0.98]">
             Revolutionizing Your
             <br />
             Business Workflow

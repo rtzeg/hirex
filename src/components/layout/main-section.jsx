@@ -92,7 +92,7 @@ const MainSection = ({ videoUrl = localVideo }) => {
                 <br />
                 <span className="text-white">
                   &amp;{" "}
-                  <span className="inline-block min-w-[17ch]">
+                  <span className="inline-block min-w-[17ch] max-[520px]:min-w-0 max-[520px]:break-words">
                     {text}
                     <Cursor />
                   </span>

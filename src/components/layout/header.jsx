@@ -116,12 +116,17 @@ const Header = () => {
           </ul>
         </nav>
 
-        <button
+        <a
+          href="https://calendly.com/asad-hirx/30min"
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-[16px] bg-[#D9DEE1] px-10 py-3 text-[20px]/[1] font-normal text-[#202326] transition-colors duration-300 hover:bg-white max-[1200px]:hidden"
-          type="button"
         >
           Book a demo
-        </button>
+        </a>
+
+
+       
 
         <button
           aria-controls="mobile-nav-panel"
@@ -132,34 +137,29 @@ const Header = () => {
           type="button"
         >
           <span
-            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${
-              isMenuOpen ? "translate-y-0 rotate-45" : "-translate-y-2.5"
-            }`}
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${isMenuOpen ? "translate-y-0 rotate-45" : "-translate-y-2.5"
+              }`}
           />
           <span
-            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${
-              isMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${isMenuOpen ? "opacity-0" : "opacity-100"
+              }`}
           />
           <span
-            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${
-              isMenuOpen ? "translate-y-0 -rotate-45" : "translate-y-2.5"
-            }`}
+            className={`absolute h-0.5 w-6 rounded-full bg-current transition-all duration-300 ${isMenuOpen ? "translate-y-0 -rotate-45" : "translate-y-2.5"
+              }`}
           />
         </button>
       </div>
 
       <div
-        className={`fixed inset-0 z-[55] bg-[#030B12]/55 transition-opacity duration-300 min-[1201px]:hidden ${
-          isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-[55] bg-[#030B12]/55 transition-opacity duration-300 min-[1201px]:hidden ${isMenuOpen ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          }`}
         onClick={closeMenu}
       />
 
       <aside
-        className={`fixed right-0 top-0 z-[60] h-screen w-[min(88vw,420px)] border-l border-white/10 bg-[#0B1B29]/80 px-7 pb-8 pt-28 text-white shadow-[-20px_0_50px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] min-[1201px]:hidden ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed right-0 top-0 z-[60] h-screen w-[min(88vw,420px)] border-l border-white/10 bg-[#0B1B29]/80 px-7 pb-8 pt-28 text-white shadow-[-20px_0_50px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] min-[1201px]:hidden ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
         id="mobile-nav-panel"
       >
         <nav aria-label="Mobile navigation" className="mt-4">
@@ -205,13 +205,15 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-
-        <button
-          className="mt-8 w-full rounded-[16px] bg-[#D9DEE1] px-8 py-4 text-[20px]/[1.05] font-normal text-[#202326] transition-colors duration-300 hover:bg-white"
-          type="button"
-        >
-          Book a demo
-        </button>
+        
+       <a
+  href="https://calendly.com/asad-hirx/30min"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="inline-flex min-h-12 items-center justify-center rounded-[16px] bg-[#D9DEE1] px-10 text-[16px] font-medium text-[#202326] transition hover:bg-white"
+>
+  Book a demo
+</a>
       </aside>
     </header>
   );

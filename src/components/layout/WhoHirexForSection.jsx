@@ -143,13 +143,14 @@ const WhoHirexFor = () => {
                   {/* CTA только на широкой карточке */}
                   {c.title === "Supply Chain Consulting" && (
                     <div className="mt-7 flex items-center justify-end max-[700px]:justify-start">
-                      <Link
-                        to="/"
-                        className="inline-flex items-center gap-3 rounded-[16px] border border-white/35 bg-white/10 px-6 py-3 text-[18px]/[1] text-white/85 backdrop-blur transition hover:bg-white/15"
+                      <a
+                        href="https://calendly.com/asad-hirx/30min"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex min-h-12 items-center justify-center rounded-[16px] bg-[#D9DEE1] px-10 text-[16px] font-medium text-[#202326] transition hover:bg-white"
                       >
-                        <span>Book a demo</span>
-                        <span className="text-white/75">→</span>
-                      </Link>
+                        Book a demo
+                      </a>  
                     </div>
                   )}
                 </div>
