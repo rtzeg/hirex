@@ -4,12 +4,15 @@ import lines from "../assets/lines.png";
 import metalShape from "../assets/63.svg";
 import valuesIcon from "../assets/04.png";
 import mapImg from "../assets/map.png"; // <-- если у тебя maps.png, поменяй тут
-
+import asadPhoto from "../assets/asad.png";
+import cobePhoto from "../assets/kobe.png";
+import romaPhoto from "../assets/roma.png";
 /* -------------------- DATA -------------------- */
 
 const defaultLeaders = [
-  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark" }, 
-  { name: "Kobe G", role: "VP of Development", badge: "dark" },
+  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark", imgSrc: asadPhoto }, 
+  { name: "Kobe G", role: "VP of Development", badge: "dark", imgSrc: cobePhoto },
+   { name: "Roma Sadikov", role: "IT helper", badge: "dark", imgSrc: romaPhoto },
 ];
 
 const stats = [
