@@ -136,7 +136,7 @@ const Industries = () => {
         {/* Big CTA */}
         <div className="mt-16 pb-24 max-[1200px]:mt-12">
           <Link
-            to="/industries"
+            to="https://calendly.com/asad-hirx/30min"
             className="group flex w-full items-center justify-center gap-6 rounded-[26px] border border-[#2B2F33]/25 bg-[#EAF0F2] px-8 py-10 text-[44px]/[1] font-medium text-[#2B2F33] shadow-[0_30px_90px_rgba(0,0,0,0.12)] transition-transform duration-300 hover:scale-[1.01] max-[1600px]:text-[40px] max-[1200px]:py-9 max-[1200px]:text-[34px] max-[700px]:py-8 max-[700px]:text-[26px]"
           >
             <span className="underline underline-offset-8 decoration-[#2B2F33]/30">

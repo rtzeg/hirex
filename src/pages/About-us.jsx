@@ -13,7 +13,7 @@ import romaPhoto from "../assets/roma.png";
 const defaultLeaders = [
   { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark", imgSrc: asadPhoto },
   { name: "Kobe G", role: "VP of Development", badge: "dark", imgSrc: cobePhoto },
-  { name: "Roma Sadikov", role: "IT helper", badge: "dark", imgSrc: romaPhoto },
+  { name: "Roma Sadikov", role: "Leading IT specialist", badge: "dark", imgSrc: romaPhoto },
 ];
 
 const stats = [
@@ -165,66 +165,78 @@ const LeaderCard = ({ leader }) => {
   const isLight = leader.badge === "light";
 
   return (
-    <article
-      data-card="1"
-      className="relative snap-start overflow-hidden rounded-[22px] border border-white/20 bg-white/5 shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
-      style={{ width: clampCardWidth, minWidth: "320px" }}
-    >
-      {/* PHOTO */}
-      <div className="relative h-[420px] max-[1200px]:h-[380px] max-[700px]:h-[360px]">
-        {leader.imgSrc ? (
-          <img
-            src={leader.imgSrc}
-            alt={leader.name}
-            className="h-full w-full object-cover"
-            draggable="false"
-          />
-        ) : (
-          <div
-            className="h-full w-full"
-            style={{
-              background:
-                "radial-gradient(120% 120% at 30% 30%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 40%, rgba(0,0,0,0.25) 100%)",
-            }}
-          >
-            <div className="absolute inset-0 grid place-items-center text-white/35">photo</div>
-          </div>
-        )}
-
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.00) 55%, rgba(0,0,0,0.20) 100%)",
-          }}
-        />
+   <article
+  data-card="1"
+  className="relative snap-start overflow-hidden rounded-[22px] border border-white/20 bg-white/5 shadow-[0_18px_60px_rgba(0,0,0,0.35)]"
+  style={{ width: clampCardWidth, minWidth: "320px" }}
+>
+  {/* PHOTO */}
+  <div className="relative h-[450px] max-[1200px]:h-[380px] max-[700px]:h-[360px]">
+    {leader.imgSrc ? (
+      <img
+        src={leader.imgSrc}
+        alt={leader.name}
+        className="h-full w-full object-cover object-center"
+        draggable="false"
+      />
+    ) : (
+      <div
+        className="h-full w-full"
+        style={{
+          background:
+            "radial-gradient(120% 120% at 30% 30%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 40%, rgba(0,0,0,0.25) 100%)",
+        }}
+      >
+        <div className="absolute inset-0 grid place-items-center text-white/35">
+          photo
+        </div>
       </div>
+    )}
 
-      {/* BADGE */}
+    {/* легкая виньетка */}
+    <div
+      aria-hidden="true"
+      className="absolute inset-0"
+      style={{
+        background:
+          "linear-gradient(to bottom, rgba(0,0,0,0.22) 0%, rgba(0,0,0,0.00) 55%, rgba(0,0,0,0.20) 100%)",
+      }}
+    />
+  </div>
+
+  {/* BADGE */}
+  <div
+    className={[
+      "absolute bottom-4 left-4 right-4 flex items-center gap-4 rounded-[16px] border px-4 py-3 backdrop-blur",
+      isLight
+        ? "border-black/10 bg-white/75 text-[#202326]"
+        : "border-white/25 bg-black/35 text-white",
+    ].join(" ")}
+  >
+    <div
+      className={[
+        "grid h-10 w-10 place-items-center rounded-[12px] text-[18px] font-semibold",
+        isLight ? "bg-black/10 text-[#202326]" : "bg-white/10 text-white",
+      ].join(" ")}
+    >
+      hx
+    </div>
+
+    <div className="min-w-0">
+      <div className="truncate text-[16px] font-semibold leading-tight">
+        {leader.name}
+      </div>
       <div
         className={[
-          "absolute bottom-4 left-4 right-4 flex items-center gap-4 rounded-[16px] border px-4 py-3 backdrop-blur",
-          isLight ? "border-black/10 bg-white/75 text-[#202326]" : "border-white/25 bg-black/35 text-white",
+          "truncate text-[13px] leading-tight",
+          isLight ? "text-[#202326]/70" : "text-white/70",
         ].join(" ")}
       >
-        <div
-          className={[
-            "grid h-10 w-10 place-items-center rounded-[12px] text-[18px] font-semibold",
-            isLight ? "bg-black/10 text-[#202326]" : "bg-white/10 text-white",
-          ].join(" ")}
-        >
-          hx
-        </div>
-
-        <div className="min-w-0">
-          <div className="truncate text-[16px] font-semibold leading-tight">{leader.name}</div>
-          <div className={["truncate text-[13px] leading-tight", isLight ? "text-[#202326]/70" : "text-white/70"].join(" ")}>
-            {leader.role}
-          </div>
-        </div>
+        {leader.role}
       </div>
-    </article>
+    </div>
+  </div>
+</article>
   );
 };
 
@@ -285,12 +297,14 @@ const LeadershipSection = ({ leaders = defaultLeaders }) => {
                   of something bigger. We are people business. Our assets are people.
                 </p>
 
-                <button
-                  type="button"
+                <a
+                  href="https://calendly.com/asad-hirx/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="mt-5 inline-flex items-center gap-3 rounded-[16px] border border-white/35 bg-white/10 px-6 py-3 text-[16px] text-white/85 backdrop-blur transition hover:bg-white/15"
                 >
                   Talk to experts <span className="text-white/75">→</span>
-                </button>
+                </a>
               </div>
             </div>
 

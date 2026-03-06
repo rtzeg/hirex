@@ -1,33 +1,34 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
-const WEB_APP_URL =
-  "https://script.google.com/macros/s/AKfycbxYh0r2MZ1j4LXgTflTuXWFc1ijEuRZ5L0UG9xHeGQAPEY-qxyOnBJoiD9gxGZG1J_pig/exec";
+const SERVICE_ID = "service_wj297kf";          // ✅ у тебя уже есть
+const TEMPLATE_ID = "template_9mcc2lg";          // 👈 вставь из EmailJS Templates
+const PUBLIC_KEY = "ljduuQlKM3W6vUtcu";     // 👈 EmailJS → Account → API Keys
 
 const FooterContactForm = () => {
+  const formRef = useRef(null);
   const [status, setStatus] = useState({ type: "idle", text: "" });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    if (!formRef.current) return;
 
-    const formEl = event.currentTarget;
     setStatus({ type: "loading", text: "Sending…" });
 
     try {
-      // form-urlencoded, + no-cors чтобы браузер не блокировал ответ CORS-ом
-      const body = new URLSearchParams(new FormData(formEl));
-
-      await fetch(WEB_APP_URL, {
-        method: "POST",
-        body,
-        mode: "no-cors",
+      // ✅ sendForm читает значения по name="" из инпутов
+      const res = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, {
+        publicKey: PUBLIC_KEY,
       });
 
-      setStatus({ type: "ok", text: "Sent ✅" });
-      formEl.reset();
+      if (res.status !== 200) throw new Error("EmailJS failed");
 
-      // убираем сообщение через 3 сек
+      setStatus({ type: "ok", text: "Sent ✅" });
+      formRef.current.reset();
+
       setTimeout(() => setStatus({ type: "idle", text: "" }), 3000);
     } catch (e) {
+      console.error(e);
       setStatus({ type: "err", text: "Error. Try again." });
     }
   };
@@ -44,8 +45,15 @@ const FooterContactForm = () => {
           </p>
         </div>
 
-        <form className="space-y-4 max-[1604px]:space-y-3" onSubmit={handleSubmit}>
-          {/* ВАЖНО: name="" должны совпадать с Apps Script (name/phone/email/comments) */}
+        <form
+          ref={formRef}
+          className="space-y-4 max-[1604px]:space-y-3"
+          onSubmit={handleSubmit}
+        >
+          {/* IMPORTANT:
+             Эти name="" должны совпадать с переменными в EmailJS Template:
+             {{name}}, {{phone}}, {{email}}, {{comments}}
+          */}
           <input
             name="name"
             className="h-14 w-full rounded-[16px] border-0 bg-white/70 px-5 text-[28px] text-[#33556d] placeholder:text-[#33556d]/50 focus:outline-none max-[1604px]:h-12 max-[1604px]:text-[22px] max-md:text-[18px]"
@@ -63,7 +71,7 @@ const FooterContactForm = () => {
           <input
             name="email"
             className="h-14 w-full rounded-[16px] border-0 bg-white/70 px-5 text-[28px] text-[#33556d] placeholder:text-[#33556d]/50 focus:outline-none max-[1604px]:h-12 max-[1604px]:text-[22px] max-md:text-[18px]"
-            placeholder="Email adress"
+            placeholder="Email address"
             type="email"
             required
           />
@@ -73,6 +81,9 @@ const FooterContactForm = () => {
             placeholder="Comments"
             type="text"
           />
+
+          {/* Простая анти-спам ловушка */}
+          <input name="website" className="hidden" tabIndex="-1" autoComplete="off" />
 
           <button
             className="h-14 w-full rounded-[16px] bg-[#33556d] text-[28px] font-medium text-white transition-colors duration-300 hover:bg-[#28485f] max-[1604px]:h-12 max-[1604px]:text-[22px] max-md:text-[18px] disabled:opacity-70"
