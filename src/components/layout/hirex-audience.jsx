@@ -11,6 +11,8 @@ import slideAudit from "../../assets/01.png";
 import topLeftCube from "../../assets/01.png";
 import topRightCube from "../../assets/03.png";
 
+const CALENDLY_URL = "https://calendly.com/asad-hirx/30min";
+
 const audienceItems = [
   {
     icon: iconSupport,
@@ -88,7 +90,10 @@ const HirexAudienceGrid = () => {
   const nextSlide = () => setSlideIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
 
   return (
-    <section id="solutions" className="relative z-10 mt-14 overflow-hidden rounded-[32px] bg-[#16232B] px-4 pb-8 pt-12 text-white md:mt-16 md:px-8 md:pb-12 md:pt-16">
+    <section
+      id="solutions"
+      className="relative z-10 mt-14 overflow-hidden rounded-[32px] bg-[#16232B] px-4 pb-8 pt-12 text-white md:mt-16 md:px-8 md:pb-12 md:pt-16"
+    >
       <img
         alt=""
         aria-hidden="true"
@@ -101,6 +106,7 @@ const HirexAudienceGrid = () => {
         className="main-shell-float-fast pointer-events-none absolute -right-12 top-2 z-[1] hidden w-[240px] opacity-95 md:block"
         src={topRightCube}
       />
+
       <div className="relative z-10 mx-auto max-w-[1320px] text-center">
         <p className="text-[24px] font-medium leading-[1.1] text-white/75">Who Hirex Is For?</p>
         <h3 className="mt-6 text-[64px]/[1.02] font-semibold tracking-[-0.03em] text-white/90 max-[1600px]:text-[48px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
@@ -114,29 +120,65 @@ const HirexAudienceGrid = () => {
 
       <div className="relative z-10 mt-10 grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
         {audienceItems.map((item, index) => {
-          const isWideCard = index === 4;
+          const isWideCard = index === 4; // Supply Chain Consulting
 
           return (
             <article
-              className={`group relative overflow-hidden rounded-[28px] border border-[#9BB7C9] bg-[linear-gradient(115deg,#153042_0%,#284257_52%,#355770_100%)] p-7 text-left transition duration-300 hover:bg-[linear-gradient(115deg,#1b232d_0%,#202834_60%,#232e3a_100%)] ${isWideCard ? "md:col-span-2 xl:col-span-2" : ""}`}
               key={item.title}
+              className={`group relative overflow-hidden rounded-[28px] border border-[#9BB7C9] bg-[linear-gradient(115deg,#153042_0%,#284257_52%,#355770_100%)] p-7 text-left transition duration-300 hover:bg-[linear-gradient(115deg,#1b232d_0%,#202834_60%,#232e3a_100%)] ${
+                isWideCard ? "md:col-span-2 xl:col-span-2" : ""
+              }`}
             >
-              <img alt="" aria-hidden="true" className="h-[74px] w-[74px] object-contain" src={item.icon} />
-              <h4 className="mt-5 max-w-[480px] text-[24px] font-medium leading-[1.1] text-[#DDE6EE] md:text-[32px]">
-                {item.title}
-              </h4>
-              <p className="mt-4 max-w-[90%] text-[18px] leading-[1.25] text-[#AFC0CF] md:text-[22    px]">
-                {item.description}
-              </p>
+              {/* ✅ Wide-card: текст слева, кнопка справа (и на мобиле кнопка снизу) */}
+              {isWideCard ? (
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-x-10">
+                  {/* LEFT */}
+                  <div className="min-w-0">
+                    <img
+                      alt=""
+                      aria-hidden="true"
+                      className="h-[74px] w-[74px] object-contain"
+                      src={item.icon}
+                    />
+                    <h4 className="mt-5 max-w-[480px] text-[24px] font-medium leading-[1.1] text-[#DDE6EE] md:text-[32px]">
+                      {item.title}
+                    </h4>
+                    <p className="mt-4 max-w-[90%] text-[18px] leading-[1.25] text-[#AFC0CF] md:text-[22px]">
+                      {item.description}
+                    </p>
+                  </div>
 
-              {item.cta ? (
-                <button
-                  className="mt-6 h-[58px] rounded-[18px] border border-[#A7BDC9] bg-[rgba(255,255,255,0.08)] px-10 text-[24px] font-medium text-[#D9E3EA] transition hover:bg-[rgba(255,255,255,0.14)] md:absolute md:bottom-7 md:right-7 md:text-[34px]"
-                  type="button"
-                >
-                  Book a demo <span className="ml-2">→</span>
-                </button>
-              ) : null}
+                  {/* RIGHT CTA */}
+                  {item.cta ? (
+                    <div className="flex justify-start md:justify-end">
+                      <a
+                        href={CALENDLY_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="pointer-events-auto mt-0 inline-flex h-[58px] w-full items-center justify-center rounded-[18px] border border-[#A7BDC9] bg-[rgba(255,255,255,0.08)] px-10 text-[24px] font-medium text-[#D9E3EA] transition hover:bg-[rgba(255,255,255,0.14)] md:w-auto md:text-[34px]"
+                      >
+                        <span className="whitespace-nowrap">Book a demo</span>
+                        <span className="ml-2">→</span>
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
+              ) : (
+                <>
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    className="h-[74px] w-[74px] object-contain"
+                    src={item.icon}
+                  />
+                  <h4 className="mt-5 max-w-[480px] text-[24px] font-medium leading-[1.1] text-[#DDE6EE] md:text-[32px]">
+                    {item.title}
+                  </h4>
+                  <p className="mt-4 max-w-[90%] text-[18px] leading-[1.25] text-[#AFC0CF] md:text-[22px]">
+                    {item.description}
+                  </p>
+                </>
+              )}
             </article>
           );
         })}
@@ -179,7 +221,9 @@ const HirexAudienceGrid = () => {
         <div className="overflow-hidden">
           <div
             className="flex gap-3 transition-transform duration-500 ease-out"
-            style={{ transform: `translateX(calc(-${slideIndex} * ((100% - ${slidesPerView - 1}*0.75rem) / ${slidesPerView} + 0.75rem)))` }}
+            style={{
+              transform: `translateX(calc(-${slideIndex} * ((100% - ${slidesPerView - 1}*0.75rem) / ${slidesPerView} + 0.75rem)))`,
+            }}
           >
             {processSlides.map((slide) => (
               <article
@@ -201,4 +245,4 @@ const HirexAudienceGrid = () => {
   );
 };
 
-export default HirexAudienceGrid;   
+export default HirexAudienceGrid;
