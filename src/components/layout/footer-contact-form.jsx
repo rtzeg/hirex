@@ -34,7 +34,7 @@ const FooterContactForm = () => {
   };
 
   return (
-    <section className="relative z-20 mx-auto w-[78.2%] max-w-[1501px] rounded-[34px] bg-[#d8e0e7] p-8 text-[#33556d] max-[1604px]:w-full max-[1604px]:rounded-[30px] max-[1604px]:px-8 max-[1604px]:py-9 md:px-14 md:py-12">
+    <section id="contact-form" className="relative z-20 mx-auto w-[78.2%] max-w-[1501px] rounded-[34px] bg-[#d8e0e7] p-8 text-[#33556d] max-[1604px]:w-full max-[1604px]:rounded-[30px] max-[1604px]:px-8 max-[1604px]:py-9 md:px-14 md:py-12">
       <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-12 max-[1604px]:gap-6">
         <div className="flex flex-col justify-between gap-8 max-[1604px]:gap-6">
           <h2 className="max-w-[440px] text-[52px]/[0.95] font-semibold max-[1604px]:max-w-[420px] max-[1604px]:text-[44px]/[1] max-md:text-[36px]/[1.05]">
