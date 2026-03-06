@@ -47,7 +47,7 @@ const Faq = () => {
       <div className="grid gap-8 lg:grid-cols-[1fr_1.15fr] lg:gap-10">
         <div>
           <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">I know you have questions.</p>
-          <h2 className="mt-3 text-[56px]/[0.95] font-semibold tracking-[-0.01em] md:text-[72px]/[0.92]">
+          <h2 className="font-semibold tracking-[-0.01em] text-[56px]/[0.95] max-[420px]:text-[44px]/[1] lg:text-[72px]/[0.92]">
             Frequently
             <br />
             Asked

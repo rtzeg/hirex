@@ -48,7 +48,7 @@ const WhoHirexFor = () => {
     <section className="bg-transparent">
       <div className="mx-auto w-[100%] max-w-[1920px] px-6 pb-24">
         <div className="relative overflow-hidden rounded-[28px] shadow-[0_25px_120px_rgba(0,0,0,0.55)]">
-          {/* ✅ ВАЖНО: фоновые слои НЕ ловят клики */}
+  
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-0"
@@ -83,13 +83,13 @@ const WhoHirexFor = () => {
                 Who Hirex Is For?
               </p>
 
-              <h2 className="mt-6 text-[64px]/[1.02] font-semibold tracking-[-0.03em] text-white/90 max-[1600px]:text-[56px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
+              <h2 className="mt-6 text-[72px]/[1.02] font-semibold tracking-[-0.03em] text-white/90 max-[1600px]:text-[56px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
                 Flexible Support
                 <br />
                 Built to Your Model
               </h2>
 
-              <p className="mx-auto mt-6 max-w-[780px] text-[18px]/[1.6] text-white/70 max-[1200px]:text-[16px]">
+              <p className="mx-auto mt-6 max-w-[800px] text-[24px]/[1.2] text-white/70 max-[1200px]:text-[16px]">
                 Hirex is designed for companies across various industries that need a reliable,
                 ready-to-work team for customer support, call centers, and operational efficiency.
               </p>
@@ -128,7 +128,7 @@ const WhoHirexFor = () => {
                       />
                     </div>
 
-                    <h3 className="text-[34px]/[1.06] font-semibold tracking-[-0.02em] text-white/92 max-[1200px]:text-[30px]">
+                    <h3 className="text-[32px]/[1.1] font-semibold tracking-[-0.02em] text-white/92 max-[1200px]:text-[30px]">
                       {c.title}
                     </h3>
 

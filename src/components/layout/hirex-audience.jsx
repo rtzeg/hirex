@@ -103,10 +103,10 @@ const HirexAudienceGrid = () => {
       />
       <div className="relative z-10 mx-auto max-w-[1320px] text-center">
         <p className="text-[24px] font-medium leading-[1.1] text-white/75">Who Hirex Is For?</p>
-        <h3 className="mx-auto mt-4 max-w-[720px] text-[52px] font-semibold leading-[1.02] md:text-[72px]">
+        <h3 className="mt-6 text-[64px]/[1.02] font-semibold tracking-[-0.03em] text-white/90 max-[1600px]:text-[48px] max-[1200px]:text-[44px] max-[700px]:text-[36px]">
           Scalable Support Tailored to Your Business
         </h3>
-        <p className="mx-auto mt-6 max-w-[900px] text-[20px] leading-[1.3] text-[#A8B8C6] md:text-[48px]">
+        <p className="mx-auto mt-6 max-w-[900px] text-[20px] leading-[1.3] text-[#A8B8C6] md:text-[24px]">
           Hirex is designed for companies across various industries that need a reliable,
           ready-to-work team for customer support, call centers, and operational efficiency.
         </p>
@@ -122,10 +122,10 @@ const HirexAudienceGrid = () => {
               key={item.title}
             >
               <img alt="" aria-hidden="true" className="h-[74px] w-[74px] object-contain" src={item.icon} />
-              <h4 className="mt-5 max-w-[480px] text-[24px] font-medium leading-[1.05] text-[#DDE6EE] md:text-[52px]">
+              <h4 className="mt-5 max-w-[480px] text-[24px] font-medium leading-[1.1] text-[#DDE6EE] md:text-[32px]">
                 {item.title}
               </h4>
-              <p className="mt-4 max-w-[90%] text-[18px] leading-[1.25] text-[#AFC0CF] md:text-[38px]">
+              <p className="mt-4 max-w-[90%] text-[18px] leading-[1.25] text-[#AFC0CF] md:text-[22    px]">
                 {item.description}
               </p>
 
@@ -147,7 +147,9 @@ const HirexAudienceGrid = () => {
           <p className="text-[22px] text-white/65 md:pt-3">How it Works</p>
 
           <div className="md:mr-auto md:ml-16">
-            <h4 className="text-[58px] font-semibold leading-[0.95] md:text-[58px]">Hire Wisely</h4>
+            <h4 className="text-[38px] font-semibold leading-[0.95] lg:text-[58px]">
+              Hire Wisely
+            </h4>
             <p className="mt-3 max-w-[720px] text-[20px] leading-[1.25] text-[#A8B8C6] md:text-[24px]">
               We carefully select our hires to ensure that you can accelerate your growth and
               achieve your goals more effectively.

@@ -67,7 +67,7 @@ const Header = () => {
 
   return (
     <header className="w-[100%] max-w-[1920px] bg-transparent">
-      <div className="relative z-[70] mx-auto mt-1 flex min-h-[102px] items-center justify-between bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
+      <div className="relative z-[70] mx-auto mt-0 flex min-h-[102px] items-center justify-between bg-[#122434]/60 px-9 shadow-lg backdrop-blur-[16px] max-[1200px]:min-h-[86px] max-[1200px]:px-5">
         <Link aria-label="Go to home page" to="/" onClick={closeMenu}>
           <img alt="Hirex" className="h-[52px] w-auto max-[1200px]:h-10" src={logo} />
         </Link>
