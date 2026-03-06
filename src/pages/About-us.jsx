@@ -3,16 +3,17 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import lines from "../assets/lines.png";
 import metalShape from "../assets/63.svg";
 import valuesIcon from "../assets/04.png";
-import mapImg from "../assets/map.png"; // <-- если у тебя maps.png, поменяй тут
+import mapImg from "../assets/map.png"; // если у тебя maps.png -> поменяй тут
 import asadPhoto from "../assets/asad.png";
 import cobePhoto from "../assets/kobe.png";
 import romaPhoto from "../assets/roma.png";
+
 /* -------------------- DATA -------------------- */
 
 const defaultLeaders = [
-  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark", imgSrc: asadPhoto }, 
+  { name: "Asad Tuvalov", role: "CEO & Founder", badge: "dark", imgSrc: asadPhoto },
   { name: "Kobe G", role: "VP of Development", badge: "dark", imgSrc: cobePhoto },
-   { name: "Roma Sadikov", role: "IT helper", badge: "dark", imgSrc: romaPhoto },
+  { name: "Roma Sadikov", role: "IT helper", badge: "dark", imgSrc: romaPhoto },
 ];
 
 const stats = [
@@ -31,8 +32,7 @@ const values = [
   },
   {
     title: "Dedication",
-    text:
-      "We give every project our full focus and commitment to achieve outstanding results.",
+    text: "We give every project our full focus and commitment to achieve outstanding results.",
     variant: "light",
   },
   {
@@ -42,8 +42,7 @@ const values = [
   },
   {
     title: "Trust",
-    text:
-      "We believe in people. By giving everyone a voice, we create a culture where trust grows naturally",
+    text: "We believe in people. By giving everyone a voice, we create a culture where trust grows naturally",
     variant: "light",
   },
 ];
@@ -188,9 +187,7 @@ const LeaderCard = ({ leader }) => {
                 "radial-gradient(120% 120% at 30% 30%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 40%, rgba(0,0,0,0.25) 100%)",
             }}
           >
-            <div className="absolute inset-0 grid place-items-center text-white/35">
-              photo
-            </div>
+            <div className="absolute inset-0 grid place-items-center text-white/35">photo</div>
           </div>
         )}
 
@@ -208,9 +205,7 @@ const LeaderCard = ({ leader }) => {
       <div
         className={[
           "absolute bottom-4 left-4 right-4 flex items-center gap-4 rounded-[16px] border px-4 py-3 backdrop-blur",
-          isLight
-            ? "border-black/10 bg-white/75 text-[#202326]"
-            : "border-white/25 bg-black/35 text-white",
+          isLight ? "border-black/10 bg-white/75 text-[#202326]" : "border-white/25 bg-black/35 text-white",
         ].join(" ")}
       >
         <div
@@ -223,15 +218,8 @@ const LeaderCard = ({ leader }) => {
         </div>
 
         <div className="min-w-0">
-          <div className="truncate text-[16px] font-semibold leading-tight">
-            {leader.name}
-          </div>
-          <div
-            className={[
-              "truncate text-[13px] leading-tight",
-              isLight ? "text-[#202326]/70" : "text-white/70",
-            ].join(" ")}
-          >
+          <div className="truncate text-[16px] font-semibold leading-tight">{leader.name}</div>
+          <div className={["truncate text-[13px] leading-tight", isLight ? "text-[#202326]/70" : "text-white/70"].join(" ")}>
             {leader.role}
           </div>
         </div>
@@ -252,7 +240,11 @@ const LeadershipSection = ({ leaders = defaultLeaders }) => {
   };
 
   return (
-    <section id="leadership" className="bg-transparent">
+    // ✅ ниже по слою, чем HERO
+    <section
+      id="leadership"
+      className="bg-transparent relative z-10 overflow-hidden m-0 p-0 -mt-[45px] max-[1200px]:-mt-[86px]"
+    >
       <div className="mx-auto w-[100%] max-w-[1920px] pb-24">
         <div className="relative overflow-hidden rounded-[28px] shadow-[0_25px_120px_rgba(0,0,0,0.55)]">
           <div
@@ -289,9 +281,8 @@ const LeadershipSection = ({ leaders = defaultLeaders }) => {
 
               <div className="max-w-[720px] text-white/70">
                 <p className="text-[16px]/[1.6] max-[1200px]:text-[15px]">
-                  We believe people do their best work when they feel supported,
-                  prepared, and part of something bigger. We are people business.
-                  Our assets are people.
+                  We believe people do their best work when they feel supported, prepared, and part
+                  of something bigger. We are people business. Our assets are people.
                 </p>
 
                 <button
@@ -367,9 +358,10 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <main className="text-white">
+    // ✅ isolate = один stacking context, z-index будет предсказуемым
+    <main className="text-white relative isolate overflow-hidden m-0 p-0 bg-transparent -mt-[50px] max-[1200px]:-mt-[86px]">
       {/* HERO */}
-      <section className="bg-transparent">
+      <section className="bg-transparent relative z-30">
         <div className="mx-auto w-[100%] max-w-[1920px]">
           <div className="relative h-[536px] overflow-hidden rounded-[28px] shadow-[0_25px_120px_rgba(0,0,0,0.55)]">
             <div
@@ -400,7 +392,7 @@ const AboutUs = () => {
               }}
             />
 
-            <div className="relative z-10 flex h-full items-end px-10 py-12 max-[900px]:px-6 max-[900px]:py-10">
+            <div className="relative z-20 flex h-full items-end px-10 py-12 max-[900px]:px-6 max-[900px]:py-10">
               <div className="max-w-[520px]">
                 <h1 className="text-[72px]/[0.95] font-semibold tracking-[-0.03em] text-white/95 max-[1200px]:text-[56px] max-[900px]:text-[44px]">
                   About Hirex
@@ -414,19 +406,22 @@ const AboutUs = () => {
               </div>
             </div>
 
+            {/* ✅ НЕ скрываем на мобилке, а адаптируем */}
             <img
               src={metalShape}
               alt=""
               aria-hidden="true"
               draggable="false"
               className="
-                pointer-events-none absolute right-[-220px] top-1/2 z-10
-                w-[980px] -translate-y-1/2 select-none
-                max-[1600px]:w-[860px] max-[1600px]:right-[-240px]
-                max-[1200px]:w-[740px] max-[1200px]:right-[-260px]
-                max-[900px]:w-[620px] max-[900px]:right-[-260px] max-[900px]:opacity-90
-                max-[650px]:hidden
-              "
+    hirex-metal-spin
+    pointer-events-none absolute top-1/2 z-10 select-none
+    right-[-220px] w-[980px]
+    max-[1600px]:w-[860px] max-[1600px]:right-[-240px]
+    max-[1200px]:w-[740px] max-[1200px]:right-[-260px]
+    max-[900px]:w-[620px] max-[900px]:right-[-260px] max-[900px]:opacity-90
+    max-[650px]:w-[540px] max-[650px]:right-[-320px] max-[650px]:opacity-80
+    max-[480px]:w-[460px] max-[480px]:right-[-340px] max-[480px]:opacity-75
+  "
             />
           </div>
         </div>
@@ -443,9 +438,7 @@ const AboutUs = () => {
         >
           <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] items-start gap-10 max-[1200px]:grid-cols-1 max-[1200px]:gap-6">
             <div className="min-w-0">
-              <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">
-                We in Numbers
-              </p>
+              <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">We in Numbers</p>
             </div>
 
             <div className="min-w-0">
@@ -501,9 +494,7 @@ const AboutUs = () => {
         <div className="mx-auto w-[100%] max-w-[1920px] px-6 pt-10 pb-20">
           <div className="grid grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)] items-start gap-10 max-[1200px]:grid-cols-1">
             <div className="min-w-0">
-              <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">
-                Our Values
-              </p>
+              <p className="text-[20px]/[1.2] text-[#73869A] md:text-[24px]">Our Values</p>
             </div>
 
             <div className="min-w-0">

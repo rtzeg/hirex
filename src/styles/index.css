@@ -476,3 +476,37 @@ body {
 .main-shell-float-fast {
   animation: main-shell-float-fast 3.4s ease-in-out infinite;
 }
+
+@keyframes hirexSpinFloat {
+  0%   { transform: translateY(-50%) rotate(0deg); }
+  50%  { transform: translateY(calc(-50% - 6px)) rotate(10deg); }
+  100% { transform: translateY(-50%) rotate(20deg); }
+}
+
+/* бесконечное вращение */
+@keyframes hirexSpin {
+  from { transform: translateY(-50%) rotate(0deg); }
+  to   { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* класс: мягко */
+.hirex-metal-spin {
+  transform-origin: 50% 50%;
+  animation: hirexSpin 26s linear infinite;
+  will-change: transform;
+}
+
+/* если хочешь “живее” вместо полного оборота */
+.hirex-metal-spin-float {
+  transform-origin: 50% 50%;
+  animation: hirexSpinFloat 7s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+/* уважение к reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .hirex-metal-spin,
+  .hirex-metal-spin-float {
+    animation: none !important;
+  }
+}
