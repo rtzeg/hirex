@@ -1,4 +1,6 @@
 import WorkflowAnimation from "./workflow-animation.jsx";
+import { Link } from "react-router-dom";
+
 
 const AboutWorkflowSection = () => {
   return (
@@ -26,9 +28,11 @@ const AboutWorkflowSection = () => {
             </p>
           </div>
 
-          <button
+
+
+          <Link
+            to="/about"
             className="mt-7 inline-flex min-h-[68px] items-center gap-2 rounded-[20px] border border-[#1a2630] px-8 text-[36px]/[1.1] text-[#1a2630] transition-all duration-300 hover:bg-[#111922] hover:text-white active:scale-[0.98] md:min-h-[74px] md:px-10 md:text-[40px]"
-            type="button"
           >
             <span>Our Story</span>
             <svg
@@ -53,7 +57,7 @@ const AboutWorkflowSection = () => {
                 strokeWidth="1.75"
               />
             </svg>
-          </button>
+          </Link>
         </div>
       </div>
 

@@ -9,9 +9,9 @@ const navigation = [
 ];
 
 const socialLinks = [
-  { label: "LinkedIn", href: "https://www.linkedin.com" },
-  { label: "Facebook", href: "https://www.facebook.com" },
-  { label: "Instagram", href: "https://www.instagram.com" }
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/hirex-outsourcing/" },
+  { label: "Facebook", href: "https://www.facebook.com/share/18NkNowNVe/?mibextid=wwXIfr" },
+  { label: "Instagram", href: "https://www.instagram.com/hirxai?igsh=cnEwcmFtNHU5N29l" }
 ];
 
 const Footer = () => {
